@@ -35,10 +35,10 @@ You can use these signs in your project in two ways:
 ## 🛠️ Technical Specifications
 
 *   **Resolution:** `1920x1920` pixels
-*   **File Formats:** `PNG` (or specify your formats)
+*   **File Format:** `PNG`.
 *   **Included Signs:**
-    *   **Numbers:** -9 through 99
-    *   **Letters:** L (Lobby), P (Parking)
+    *   **Numbers:** -9 through 99.
+    *   **Letters:** L (Lobby), P (Parking).
 *   **Font Sizing Logic:**
     To ensure visual consistency, the font size is adjusted based on the width of the character(s). Wider characters (like `99` or `50`) use a slightly smaller font size than narrow characters (like `1` or `11`) to appear perfectly centered and balanced within the frame.
     *   **Narrow Characters** (e.g., `1`, `7`, `L`, `P`): 2800px
