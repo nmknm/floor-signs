@@ -4,7 +4,7 @@
 
 A collection of high-resolution, ready-to-use floor signs for buildings. This project provides a clean and modern set of numbers and letters, perfect for digital displays or physical signage.
 
- <p align="center"><img src="blue-med/99.png" width="500"></p>
+ <p align="center"><img src="blue-med/99.png" width="400"></p>
 
 ## ✨ Features
 
