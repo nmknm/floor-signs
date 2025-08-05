@@ -26,7 +26,7 @@ You can use these signs in your project in two ways:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/floor-signs.git
+    git clone https://github.com/nmknm/floor-signs.git
     ```
 
 2.  **Download a ZIP:**
