@@ -8,20 +8,19 @@ A collection of high-resolution, ready-to-use floor signs for buildings. This pr
 
 ## ✨ Features
 
-*   **High Resolution:** Crisp 1920x1920 resolution suitable for printing and large displays.
+*   **High Resolution:** 1920x1920 resolution, very high quality.
 *   **Comprehensive Set:** Includes numbers from -9 to 99, plus letters for "Lobby" (L) and "Parking" (P).
-*   **MIT Licensed:** Free to use for personal and commercial projects.
 *   **Optically Centered:** Font sizes are dynamically adjusted based on character width to ensure each sign feels visually balanced.
 
 ## 🎨 Available Styles
 
 This project is organized by style. Currently, one style is available.
 
-| Style Name          | Font Color      | Background Gradient                                                                                             | Font Weight |
-| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
-| `blue-med` | White `#FFFFFF` | **From:** `RGB(49, 169, 255)` / `#31A9FF` (Top)<br/>**To:** `RGB(0, 153, 255)` / `#0099FF` (Bottom)                                                        | 500 (Medium)|
+| Style Name          | Font Color      | Background Gradient                                                                                             | Font Weight | Font Family |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- | ----------- | ----------- |
+| `blue-med` | White `#FFFFFF` | **From:** `RGB(49, 169, 255)` / `#31A9FF` (Top)<br/>**To:** `RGB(0, 153, 255)` / `#0099FF` (Bottom)                                                        | 500 (Medium)| Inter |
 
-## 🚀 How to Use
+## ⚙️ How to Use
 
 You can use these signs in your project in two ways:
 
@@ -53,3 +52,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+## Future Plans
+
+* More customizability: Add more color options, fonts and font weights.
+* More numbers and letters.
+* A website for making custom sign sets.
+* More file formats.
