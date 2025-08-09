@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-**➡️ [Click here for a live demo of the Floor Sign Generator](https://your-github-username.github.io/floor-signs/)** ⬅️
+**➡️ [Click here for a live demo of the Floor Sign Generator](https://nmknm.github.io/floor-signs/)** ⬅️
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 
