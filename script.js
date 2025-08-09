@@ -51,20 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // --- Core Drawing & Generation Functions ---
-    const calculateFontSize = (ctx, text, fontFamily, fontWeight, fontStyle) => {
-        const sizes = [2800, 2400, 2000];
-        const maxWidth = 1680; // 1920 - 240 padding
-
-        for (const size of sizes) {
-            ctx.font = `${fontStyle} ${fontWeight} ${size}px ${fontFamily}`;
-            const metrics = ctx.measureText(text);
-            if (metrics.width <= maxWidth) {
-                return size;
-            }
-        }
-        return sizes[sizes.length - 1]; // Return smallest size if all are too wide
-    };
-
     const loadFont = async (family, weight, style) => {
         const font = `${style} ${weight} 10px ${family}`;
         if (document.fonts.check(font)) return;
@@ -153,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const regenerate = async () => {
         updateSettingsFromUI();
-        settings.fontSize = calculateFontSize(ctx, settings.text, settings.fontFamily, settings.fontWeight, settings.fontStyle);
+        settings.fontSize = 2000; // Use fixed font size
         await generateSign(settings);
     };
 
@@ -285,9 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < signSet.length; i++) {
                 const signText = signSet[i];
-                let settingsForSign = { ...currentStyleSettings, text: signText };
-                // Calculate the specific font size for this sign text
-                settingsForSign.fontSize = calculateFontSize(offscreenCtx, signText, settingsForSign.fontFamily, settingsForSign.fontWeight, settingsForSign.fontStyle);
+                let settingsForSign = { ...currentStyleSettings, text: signText, fontSize: 2000 };
 
                 await generateSignOffscreen(settingsForSign, offscreenCanvas, offscreenCtx);
 
