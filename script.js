@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const regenerate = async () => {
         updateSettingsFromUI();
-        settings.fontSize = 1800; // Use fixed font size
+        settings.fontSize = 1400; // Use fixed font size
         await generateSign(settings);
     };
 
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < signSet.length; i++) {
                 const signText = signSet[i];
-                let settingsForSign = { ...currentStyleSettings, text: signText, fontSize: 1800 };
+                let settingsForSign = { ...currentStyleSettings, text: signText, fontSize: 1400 };
 
                 await generateSignOffscreen(settingsForSign, offscreenCanvas, offscreenCtx);
 
