@@ -1,8 +1,12 @@
 # Floor Signs
 
+## 🚀 Live Demo
+
+**➡️ [Click here for a live demo of the Floor Sign Generator](https://your-github-username.github.io/floor-signs/)** ⬅️
+
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-A collection of high-resolution, ready-to-use floor signs for buildings. This project provides a clean and modern set of numbers and letters, perfect for digital displays or physical signage.
+This repository contains a collection of high-resolution, ready-to-use floor signs and a powerful web-based generator to create your own.
 
  <p align="center"><img src="blue-med/99.png" width="400"></p>
 
@@ -44,6 +48,19 @@ You can use these signs in your project in two ways:
     *   **Narrow Characters** (e.g., `1`, `7`, `L`, `P`): 2800px
     *   **Wide Characters** (e.g., `-9`, `41`): 2400px
     *   **Extra-Wide Characters** (e.g., `99`, `50`): 2000px
+
+## 🚀 Publishing to GitHub Pages
+
+This repository includes a web-based sign generator (`index.html`). To publish it as a live website using GitHub Pages:
+
+1.  **Navigate to Settings:** In your repository on GitHub, go to the **Settings** tab.
+2.  **Go to Pages:** In the left sidebar, click on **Pages**.
+3.  **Configure the Source:**
+    *   Under "Build and deployment", for the "Source", select **Deploy from a branch**.
+    *   For the "Branch", select your main branch (`main` or `master`) and the ` / (root)` folder.
+4.  **Save:** Click **Save**.
+
+After a minute or two, GitHub will build and deploy your site. The public URL will be displayed at the top of the "Pages" settings page.
 
 ## 📄 License
 

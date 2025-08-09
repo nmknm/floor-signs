@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Core Drawing & Generation Functions ---
     const calculateFontSize = (ctx, text, fontFamily, fontWeight, fontStyle) => {
         const sizes = [2800, 2400, 2000];
+        const maxWidth = 1680; // 1920 - 240 padding
+
+        for (const size of sizes) {
+            ctx.font = `${fontStyle} ${fontWeight} ${size}px ${fontFamily}`;
+            const metrics = ctx.measureText(text);
+            const renderedWidth = metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
+            if (renderedWidth <= maxWidth) {
+
         const maxWidth = 1800; // 1920 - 120 padding
 
         for (const size of sizes) {
