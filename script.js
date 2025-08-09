@@ -58,15 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const size of sizes) {
             ctx.font = `${fontStyle} ${fontWeight} ${size}px ${fontFamily}`;
             const metrics = ctx.measureText(text);
-            const renderedWidth = metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
-            if (renderedWidth <= maxWidth) {
-
-        const maxWidth = 1800; // 1920 - 120 padding
-
-        for (const size of sizes) {
-            ctx.font = `${fontStyle} ${fontWeight} ${size}px ${fontFamily}`;
-            const textMetrics = ctx.measureText(text);
-            if (textMetrics.width <= maxWidth) {
+            if (metrics.width <= maxWidth) {
                 return size;
             }
         }
@@ -159,10 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     };
 
-    const regenerate = () => {
+    const regenerate = async () => {
         updateSettingsFromUI();
         settings.fontSize = calculateFontSize(ctx, settings.text, settings.fontFamily, settings.fontWeight, settings.fontStyle);
-        generateSign(settings);
+        await generateSign(settings);
     };
 
     // --- Event Listeners ---
@@ -259,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const generateSignOffscreen = async (currentSettings, offscreenCanvas, offscreenCtx) => {
-            const { text, fontFamily, fontWeight, fontStyle, fontColor, bgColor1, bgColor2, gradientAngle } = currentSettings;
+            const { text, fontFamily, fontWeight, fontStyle, fontColor, bgColor1, bgColor2, gradientAngle, fontSize } = currentSettings;
 
             await loadFont(fontFamily, fontWeight, fontStyle);
 
@@ -271,7 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
             offscreenCtx.fillStyle = gradient;
             offscreenCtx.fillRect(0, 0, offscreenCanvas.width, offscreenCanvas.height);
 
-            const fontSize = getFontSize(text);
             offscreenCtx.font = `${fontStyle} ${fontWeight} ${fontSize}px ${fontFamily}`;
             offscreenCtx.fillStyle = fontColor;
             offscreenCtx.textAlign = 'center';
@@ -294,7 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < signSet.length; i++) {
                 const signText = signSet[i];
-                const settingsForSign = { ...currentStyleSettings, text: signText };
+                let settingsForSign = { ...currentStyleSettings, text: signText };
+                // Calculate the specific font size for this sign text
+                settingsForSign.fontSize = calculateFontSize(offscreenCtx, signText, settingsForSign.fontFamily, settingsForSign.fontWeight, settingsForSign.fontStyle);
+
                 await generateSignOffscreen(settingsForSign, offscreenCanvas, offscreenCtx);
 
                 const dataURL = offscreenCanvas.toDataURL('image/png');
