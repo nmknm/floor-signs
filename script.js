@@ -60,6 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const metrics = ctx.measureText(text);
             const renderedWidth = metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
             if (renderedWidth <= maxWidth) {
+
+        const maxWidth = 1800; // 1920 - 120 padding
+
+        for (const size of sizes) {
+            ctx.font = `${fontStyle} ${fontWeight} ${size}px ${fontFamily}`;
+            const textMetrics = ctx.measureText(text);
+            if (textMetrics.width <= maxWidth) {
                 return size;
             }
         }
