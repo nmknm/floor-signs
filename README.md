@@ -1,10 +1,8 @@
 # Floor Signs
 
-## ✨ Live Demo
+## 🚀 Live Demo
 
 **➡️ [Click here for a live demo of the Floor Sign Generator](https://your-github-username.github.io/floor-signs/)** ⬅️
-
-*(Note: This link will work after you [publish the website to GitHub Pages](#-publishing-to-github-pages).)*
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 
